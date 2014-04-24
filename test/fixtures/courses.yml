@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  crn: MyString
+  name: MyString
+  meeting_time: MyString
+
+two:
+  crn: MyString
+  name: MyString
+  meeting_time: MyString

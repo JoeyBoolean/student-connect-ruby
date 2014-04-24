@@ -1,0 +1,19 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+//.form-signin .form-control:focus {
+//  z-index: 2;
+//}
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #000;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #000);
+} 

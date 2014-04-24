@@ -1,0 +1,61 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+.under {
+  padding-top: 100px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.img-size{
+ width: 6em;
+ height: 6em;
+}
+
+.img-circular-sm{
+ width: 6em;
+ height: 6em;
+ background-image: url('http://images.ak.instagram.com/profiles/profile_185454029_75sq_1362607289.jpg');
+ background-size: cover;
+ display: inline-block;
+ border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ margin:0em 0px 20px 0em;
+
+}
+
+.left{
+    display:inline-block;
+    vertical-align:top;
+    margin-left:.5em;
+    margin-top:0px;
+}
+.name{
+    margin-top:0px;
+    color:gray;
+}
+.gray{
+  color:gray;
+}
+.date{
+  color:gray;
+  font-size:.65em;
+}
+.message-text{
+  font-size:1.25em;
+}
+.yellow{
+  color:#D3D313;
+}
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #000;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #000);
+}

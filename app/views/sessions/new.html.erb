@@ -1,0 +1,28 @@
+<% provide(:title, "Sign in") %>
+
+<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+      <%= form_for(:session, url: sessions_path) do |f| %>
+      <fieldset>
+          <h2>Please Sign In</h2>
+          <hr class="colorgraph">
+          <div class="form-group">
+            <%= f.email_field :email, class: "form-control input-lg", placeholder: "Email", autofocus: true, required: true %>
+          </div>
+              <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password", required: true %>
+            <hr class="colorgraph">
+            <div class="row">
+            <div class="form-actions">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <%= f.submit "Sign in", class: "btn btn-lg btn-success btn-block" %>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary btn-block"%> 
+            </div>
+            </div>
+          </div>
+      </fieldset>
+      <% end %>
+</div>
+<!-- </div> -->
+

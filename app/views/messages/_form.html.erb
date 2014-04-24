@@ -1,0 +1,23 @@
+<%= form_for([@course, @message]) do |f| %>
+<% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if signed_in? %>
+  <%= @current_user.id %>
+  <% end %>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_field :message%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
