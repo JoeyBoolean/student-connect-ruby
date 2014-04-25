@@ -3,15 +3,16 @@
     <% @messages.each do |message| %>
     <div class="well">
       <div class="media">
-        <%= image_tag("no_image.jpg", :class => "media-object pull-left") %>
+        <%= image_tag("no_image.jpg", :class => "media-object pull-left img-circle img-size") %>
         <div class="media-body">
           <div class="media-heading">
             <% @user = @course.users.find(message.user_id) %>
-            <h3><%=link_to @user.first_name, user_path(@user) %> said
+            <% full_name = @user.first_name + " " + @user.last_name %>
+            <h4><%=link_to full_name, user_path(@user) %> said
               <span class="pull-right">
                 <p class="date"><%= time_ago_in_words message.created_at %></p>
               </span>
-            </h3>
+            </h4>
               <p class="message-text"><%= message.message %></p>
               
             </div>

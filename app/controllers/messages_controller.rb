@@ -14,6 +14,10 @@ class MessagesController < ApplicationController
 		@message = @course.messages.new
  	end
 
+ 	def full_name(first_name, last_name)
+ 		@full_name = first_name + " " + last_name
+ 	end
+
   	def create
   		@user = @current_user
   		if signed_in?
@@ -37,7 +41,8 @@ class MessagesController < ApplicationController
   	end
 
   	def index
-  		@messages = @course.messages.includes(:user).all
+  		@messages = @course.messages.includes(:user).order('created_at DESC').all
+
   	end
 
   	
