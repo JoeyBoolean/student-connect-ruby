@@ -1,16 +1,21 @@
 <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-<h1>Listing Messages</h1>
+<h1><%= @course.name %></h1>
+
+<%= render 'form' %>
     <% @messages.each do |message| %>
     <div class="well">
       <div class="media">
-        <%= image_tag("no_image.jpg", :class => "media-object pull-left img-circle img-size") %>
-        <div class="media-body">
+        <% @user = @course.users.find(message.user_id) %>
+        <% image = @user.image || "no_image.jpg" %>
+          <%= image_tag(image, :class => "media-object pull-left img-circle img-size") %>
+          <div class="media-body">
           <div class="media-heading">
-            <% @user = @course.users.find(message.user_id) %>
             <% full_name = @user.first_name + " " + @user.last_name %>
-            <h4><%=link_to full_name, user_path(@user) %> said
+            <h4><%=link_to full_name, user_path(@user) %>
               <span class="pull-right">
-                <p class="date"><%= time_ago_in_words message.created_at %></p>
+                <% tmp = time_ago_in_words message.created_at %>
+                <% time = small_time tmp %>
+                <p class="date"><span class="glyphicon glyphicon-time"> </span> <%= time %></p>
               </span>
             </h4>
               <p class="message-text"><%= message.message %></p>
@@ -24,4 +29,5 @@
 </div>
 <br>
 
-<%= link_to 'New Message', new_course_message_path(@course) %>
+<%= link_to 'New Message',  users_path%>
+<!-- new_course_message_path(@course) -->

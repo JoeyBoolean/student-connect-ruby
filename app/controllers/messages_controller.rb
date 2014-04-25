@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
 		@user = @current_user
 		@course = Course.find(params[:course_id])
 		@message = @course.messages.new
- 	end
+	end
 
  	def full_name(first_name, last_name)
  		@full_name = first_name + " " + last_name
@@ -41,6 +41,9 @@ class MessagesController < ApplicationController
   	end
 
   	def index
+  		# @user_form = @current_user
+		@course_form = Course.find(params[:course_id])
+		@message = @course.messages.new
   		@messages = @course.messages.includes(:user).order('created_at DESC').all
 
   	end

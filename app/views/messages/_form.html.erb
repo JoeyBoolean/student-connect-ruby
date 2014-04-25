@@ -10,14 +10,10 @@
       </ul>
     </div>
   <% end %>
-  <% if signed_in? %>
-  <%= @current_user.id %>
-  <% end %>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_field :message%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="input-group input-lg">
+    <%= f.text_field :message, class: "form-control" %>
+    <span class="input-group-btn">
+    <%= f.submit "Connect!", class: "btn btn-default" %>
+  </span>
   </div>
 <% end %>
