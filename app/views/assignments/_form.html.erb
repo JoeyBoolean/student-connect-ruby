@@ -10,11 +10,10 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.text_field :course_id%>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<div class="input-group input-lg">
+    <%= f.text_field :course_id, class: "form-control", placeholder: "Enter a CRN", autofocus: true%>
+    <span class="input-group-btn">
+    <%= f.submit "Add Course!", class: "btn btn-default" %>
+  </span>
   </div>
 <% end %>
