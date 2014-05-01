@@ -15,7 +15,7 @@ class AssignmentsController < ApplicationController
 	      		render 'new'
 	      	end
 	  	else
-	      flash.now[:error] = 'Invalid email/password combination'
+	      flash.now[:error] = 'Course number not found'
 	      render 'new'
 	    end
   	end

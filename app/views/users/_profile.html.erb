@@ -19,16 +19,22 @@
                     <center>
                     <% image = @user.image || "no_image.jpg" %>
                     <%= image_tag(image, :class => "img-circle profile-size") %></a>
-                    <h3 class="media-heading"><%= @user.last_name %></h3>
+                    <h3 class="media-heading"><%= @user.first_name %><%= @user.last_name %></h3>
                     
                     </center>
                     <hr>
                     <center>
-                    <p class="text-left"><strong>Major:</strong> <small>Computer Science</small><br>
+                    <p class="text-left"><strong>Major:</strong> <small><%= @user.major %></small><br>
                         </p>
-					<p class="text-left"><strong>Current Classes:</strong> <small>Data Structures, Linear Algebra, Networking</small><br>
+                    <p class="text-left"><strong>Current Classes:</strong> 
+                        <% names = [] %>
+                        <% @courses.each do |c|  %>
+                        <% names.push(c.name) %>
+                        <% end %>
+                        <small><%= names.to_sentence %></small>
+                        <br>
                         </p>
-					<p class="text-left"><strong>Current Standing:</strong> <small>Sophmore</small><br>
+					<p class="text-left"><strong>Current Standing:</strong> <small><%= @user.standing %></small><br>
                         </p>
                     <p class="text-left"><strong>Email:</strong> <small><%= @user.email %></small><br>
                         </p>

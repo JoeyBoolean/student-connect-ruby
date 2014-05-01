@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
 	      		render 'new'
 	      	end
 	  	else
-	      flash.now[:error] = 'Invalid email/password combination'
+	      flash.now[:error] = 'Not signed in.'
 	      render 'new'
 	    end
   	end
