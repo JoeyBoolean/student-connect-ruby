@@ -29,6 +29,15 @@ body {
 
 }
 
+.delete-button{
+  border: 0px;
+  color: gray;
+  background-color: transparent;
+}
+.delete-button:hover{
+  color: red;
+}
+
 .profile-size{
    width: 140px;
  height: 140px;

@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
-	before_filter :get_course
-	before_filter :get_users
+	before_action :get_course, only: [:new, :create, :index]
+	before_action :get_users, only: [:new, :create, :index]
+	before_action :set_message, only: :destroy
 
 	def get_course
 		@course = Course.find(params[:course_id])
@@ -50,7 +51,16 @@ class MessagesController < ApplicationController
 
   	
   	def destroy
-
+  		@message.destroy
+  		redirect_to course_messages_path(@message.course)
+  		#redirect_to courses_path
   	end
+  	
+  	private
 
+  	def set_message
+  		@message = Message.find(params[:id])
+  		puts @message.course.id
+  		# @course = Course.find(:course_id)
+  	end
 end
