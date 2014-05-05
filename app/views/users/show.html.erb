@@ -9,12 +9,19 @@
 
 <% @courses.each do |course| %>
 <div class="well well-sm">
-  <h4><%= link_to course.name, course_messages_path(course) %></h4>
-  <p><%= course.dept %> - CRN: <%= course.crn %></p>
-  <p><%= course.professor %></p>
-  <p>Meeting Time: <%= course.meeting_time %></p>
-  <div class="divider"></div>
-</div>
+	<div class="media">
+		<%= image_tag('wu_shock.jpg', :class => "media-object pull-left img-circle img-size") %>
+		 <div class="media-body">
+          <div class="media-heading">
+			  <h4><%= link_to course.name, course_messages_path(course) %></h4>
+			</div>
+			  <p><%= course.dept %> - CRN: <%= course.crn %></p>
+			  <p><%= course.professor %></p>
+			  <p>Meeting Time: <%= course.meeting_time %></p>
+			  <div class="divider"></div>
+			</div>
+		</div>
+	</div>
 <% end %>
 <% end %>
 
