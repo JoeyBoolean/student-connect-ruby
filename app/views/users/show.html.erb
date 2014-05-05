@@ -10,7 +10,9 @@
 <% @courses.each do |course| %>
 <div class="well well-sm">
   <h4><%= link_to course.name, course_messages_path(course) %></h4>
-  <p><%= course.crn %></p>
+  <p><%= course.dept %> - CRN: <%= course.crn %></p>
+  <p><%= course.professor %></p>
+  <p>Meeting Time: <%= course.meeting_time %></p>
   <div class="divider"></div>
 </div>
 <% end %>
