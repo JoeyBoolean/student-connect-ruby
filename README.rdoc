@@ -1,7 +1,8 @@
-== README
+== Student Connect
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app can be found here http://student-connect.herokuapp.com/
+
+A demo video can be watched here http://youtu.be/Eqt-1vWJ4UI
 
 Things you may want to cover:
 
